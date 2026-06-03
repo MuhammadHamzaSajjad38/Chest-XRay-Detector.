@@ -41,6 +41,10 @@ Because the trained model file (`best_model.keras`) is 241 MB, it exceeds GitHub
 | Input Size | 299 × 299 pixels |
 | Classes | 4 (Covid-19, Normal, Pneumonia, Tuberculosis) |
 | Explainability | Grad-CAM Heatmap |
+| Test Accuracy | 98.81% |
+
+## ⚙️ Process Flow
+![Process Flow](static/images/process.png)
 
 ## 📦 Dataset
 The model was trained on a custom combined dataset (8.4 GB) available on Kaggle:
