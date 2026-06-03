@@ -1,0 +1,715 @@
+/* =================================== */
+/*    STICKY FOOTER & LAYOUT STYLES    */
+/* =================================== */
+
+html {
+    height: 100%; /* Ensure the html element takes full height */
+}
+
+/* THIS IS THE CORRECT, COMBINED VERSION */
+
+body {
+    display: flex;
+    flex-direction: column; /* Stacks children vertically */
+    min-height: 100vh; /* Takes full viewport height */
+    font-family: 'Inter', sans-serif; /* Adds the font */
+    color: var(--text-color); /* Sets the text color */
+    background-color: #ece6e6; /* Adds the new background color */
+}
+
+main {
+    flex: 1; /* This is the key: it makes the main content area grow to fill any available space */
+}
+
+/* Optional: Add a bit more space above the footer for better aesthetics */
+footer {
+    margin-top: auto; /* This also helps push it to the bottom */
+}
+
+/* =================================== */
+/*   CUSTOM NAVBAR COLOR OVERRIDE      */
+/* =================================== */
+
+.bg-primary {
+    background-color: #3f06fc !important;
+}
+
+/* =================================== */
+/*   CUSTOM NAVBAR STYLING             */
+/* =================================== */
+
+/* This sets the navbar background color */
+.bg-primary {
+    background-color: #4e73df !important;
+}
+
+/* This targets the navigation links and makes them white */
+.navbar-dark .navbar-nav .nav-link {
+    color: white !important;
+}
+
+/* Optional: Make the links a bit brighter on hover for feedback */
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* The rest of your existing CSS code follows... */
+
+/* The rest of your existing CSS code follows... */
+/* =================================== */
+/*   NEW STYLES FOR ATTRACTIVE HOMEPAGE  */
+/* =================================== */
+
+
+/* --- Hero Section with Video Background --- */
+.hero-section {
+    position: relative;
+    height: 80vh; /* Make it taller */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Hide video overflow */
+    color: #fff;
+    text-align: center;
+}
+
+#hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translateX(-50%) translateY(-50%);
+    background-size: cover;
+}
+
+.hero-section::after { /* Dark overlay for text readability */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(13, 37, 63, 0.7); /* A deep blue overlay */
+    z-index: -50;
+}
+
+.hero-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.hero-section .lead {
+    font-size: 1.25rem;
+    font-weight: 300;
+    max-width: 700px;
+}
+
+.hero-section .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
+}
+
+.hero-section .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.6);
+}
+
+/* --- Animated Feature Cards --- */
+.feature-card {
+    border: none;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0; /* Start hidden */
+    transform: translateY(30px); /* Start slightly lower */
+    animation: slideUp 0.8s forwards;
+}
+
+/* Define different animation delays for a staggered effect */
+.feature-card:nth-child(1) { animation-delay: 0.1s; }
+.feature-card:nth-child(2) { animation-delay: 0.3s; }
+.feature-card:nth-child(3) { animation-delay: 0.5s; }
+
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 1rem 3rem rgba(0,0,0,0.175) !important;
+}
+
+.feature-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    background-image: linear-gradient(135deg, #007bff, #0056b3);
+}
+
+/* --- How it Works Section --- */
+.process-section {
+    padding: 4rem 0;
+}
+
+.step-icon {
+    font-size: 3rem;
+    color: #007bff;
+    margin-bottom: 1rem;
+    display: inline-block;
+    padding: 20px;
+    border: 2px solid #007bff;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.step-icon:hover {
+    background-color: #007bff;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+/* --- New Mission Section --- */
+.mission-section {
+    background-color: #f8f9fa;
+    padding: 4rem 0;
+}
+
+
+
+
+
+
+/* =================================== */
+/*    STYLES SPECIFICALLY FOR THE DETECTOR PAGE    */
+/* =================================== */
+
+.detector-page .header {
+    background: linear-gradient(135deg, #4e73df 0%, #224abe 100%);
+    color: white;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+}
+
+.detector-page .upload-container {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.detector-page .upload-section {
+    width: 300px; /* You might want to change this to col-lg-4 or similar for better responsiveness */
+    flex-shrink: 0;
+}
+
+.detector-page .results-section {
+    flex-grow: 1;
+}
+
+.detector-page .card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+    transition: transform 0.3s;
+    margin-bottom: 20px;
+}
+
+.detector-page .upload-area {
+    border: 2px dashed #d1d3e2;
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    background-color: white;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.detector-page .upload-area:hover {
+    border-color: #4e73df;
+    background-color: rgba(78, 115, 223, 0.05);
+}
+
+.detector-page .btn-primary {
+    background-color: #4e73df;
+    border-color: #4e73df;
+}
+
+.detector-page .result-card {
+    border-left: 5px solid #1cc88a;
+}
+
+.detector-page .diagnosis-result {
+    text-align: center;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.detector-page .diagnosis-text {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #5a5c69;
+}
+
+.detector-page .confidence-badge {
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    border-radius: 50px;
+    background-color: #1cc88a;
+    color: white;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.detector-page .heatmap-container {
+    position: relative;
+    margin-bottom: 20px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.detector-page .heatmap-label {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.detector-page .result-image {
+    width: 100%;
+    height: auto;
+    max-height: 400px; /* Increased height a bit for better view */
+    object-fit: contain;
+}
+
+.detector-page .interpretation-guide {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+.detector-page .alert-flash {
+    position: fixed;
+    top: 80px; /* Position below the navbar */
+    right: 20px;
+    z-index: 1050;
+}
+
+
+
+/* =================================== */
+/*   STYLES FOR THE "ABOUT" PAGE       */
+/* =================================== */
+
+.about-header {
+    padding: 5rem 0;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url("https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop");
+    background-position: center;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    border-radius: 0.5rem;
+}
+
+.about-header h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+}
+
+.info-card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn-Up 0.6s forwards;
+}
+
+.info-card .card-icon {
+    font-size: 2.5rem;
+    color: #007bff;
+    margin-bottom: 1rem;
+}
+
+/* Define staggered animation delays */
+.problem-card { animation-delay: 0.2s; }
+.objectives-card { animation-delay: 0.4s; }
+.workflow-card { animation-delay: 0.6s; }
+
+
+@keyframes fadeIn-Up {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Project Workflow/Timeline styles */
+.workflow-section .timeline {
+    position: relative;
+    padding: 2rem 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 20px;
+    height: 100%;
+    width: 4px;
+    background: #e9ecef;
+    border-radius: 2px;
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 50px;
+    margin-bottom: 2.5rem;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translateX(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #007bff;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    border: 4px solid #f8f9fa;
+}
+
+.timeline-item h5 {
+    font-weight: 600;
+    color: #343a40;
+}
+
+
+
+/* =================================== */
+/*   STYLES FOR "HOW IT WORKS" PAGE    */
+/* =================================== */
+
+.tech-header {
+    padding: 5rem 0;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.6), rgba(4, 9, 30, 0.6)), url("https://images.unsplash.com/photo-1554474744-84a5c92f159a?q=80&w=1932&auto=format&fit=crop");
+    background-position: center;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    border-radius: 0.5rem;
+}
+
+.tech-header h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+}
+
+.architecture-diagram {
+    padding: 1.5rem;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+}
+
+.accordion-button:not(.collapsed) {
+    color: #ffffff;
+    background-color: #007bff;
+}
+
+.accordion-button:focus {
+    box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
+}
+
+.accordion-item {
+    border-radius: 0.5rem !important;
+    border: 1px solid #dee2e6;
+    margin-bottom: 1rem;
+}
+
+.accordion-header {
+    border-radius: 0.5rem !important;
+}
+
+.accordion-body strong {
+    color: #0d6f;
+}
+
+
+
+/* ================================================== */
+/*   NEW ENHANCED STYLES FOR "HOW IT WORKS" PAGE    */
+/* ================================================== */
+
+/* A stylish header for the page */
+.tech-header {
+    padding: 5rem 0;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url("https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=1932&auto=format&fit=crop");
+    background-position: center;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    border-radius: 0.5rem;
+}
+
+.tech-header h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+}
+
+/* A clean container for your main diagram */
+.architecture-container {
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.1);
+    margin-top: -60px; /* Pulls the card up over the header slightly */
+    position: relative;
+    z-index: 10;
+}
+
+/* Styling for the alternating feature sections */
+.feature-section {
+    padding: 4rem 0;
+    overflow: hidden; /* Important for animations */
+}
+
+/* Add a subtle divider between sections */
+.feature-section + .feature-section {
+    border-top: 1px solid #e9ecef;
+}
+
+.feature-image {
+    border-radius: 15px;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
+    transition: transform 0.5s ease;
+}
+
+.feature-image:hover {
+    transform: scale(1.05);
+}
+
+.feature-text h3 {
+    font-weight: 600;
+    color: #007bff;
+    margin-bottom: 1rem;
+}
+
+/* Animation for elements sliding in */
+.slide-in-from-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: slideInLeft 0.8s forwards;
+    animation-delay: 0.2s;
+}
+
+.slide-in-from-right {
+    opacity: 0;
+    transform: translateX(50px);
+    animation: slideInRight 0.8s forwards;
+    animation-delay: 0.2s;
+}
+
+@keyframes slideInLeft {
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+    to { opacity: 1; transform: translateX(0); }
+}
+
+
+/* ================================================== */
+/*   STYLES FOR THE "DATASET" PAGE                  */
+/* ================================================== */
+
+.dataset-header {
+    background: linear-gradient(rgba(0, 123, 255, 0.1), rgba(0, 123, 255, 0)), var(--light-gray);
+    border-color: #e0e9f5;
+}
+
+.chart-card {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.chart-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.summary-table-card {
+    padding: 2rem;
+}
+
+.summary-table-card .table {
+    font-size: 0.95rem;
+}
+
+.summary-table-card .table thead th {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+
+/* ================================================== */
+/*   STYLES FOR THE "DATASET" PAGE                  */
+/* ================================================== */
+
+.dataset-header {
+    background: linear-gradient(rgba(0, 123, 255, 0.1), rgba(0, 123, 255, 0)), var(--light-bg);
+    border-color: #e0e9f5;
+}
+
+.chart-card {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.chart-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.summary-table-card {
+    padding: 2rem;
+}
+
+/* --- NEW ATTRACTIVE TABLE STYLES --- */
+.attractive-table {
+    border: none;
+    font-size: 0.95rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-radius: 12px;
+    overflow: hidden; /* Important for keeping rounded corners on the table header */
+}
+
+.attractive-table thead th {
+    background-color: var(--primary-color);
+    color: white;
+    border-bottom: none !important;
+    font-weight: 600;
+    padding: 1rem;
+    vertical-align: middle;
+}
+
+.attractive-table tbody tr {
+    transition: background-color 0.2s ease-in-out;
+}
+
+.attractive-table tbody tr:hover {
+    background-color: #eef5ff; /* A very light blue for hover */
+}
+
+.attractive-table tbody td {
+    padding: 1rem;
+    vertical-align: middle;
+    color: #495057;
+    border-top: 1px solid var(--card-border);
+}
+
+.attractive-table tbody tr:first-child td {
+    border-top: none; /* No top border for the first row */
+}
+
+.attractive-table td strong {
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+/* ================================================== */
+/*   STYLES FOR THE "MODEL RESULTS" PAGE            */
+/* ================================================== */
+
+.results-header {
+    background: linear-gradient(rgba(0, 123, 255, 0.1), rgba(0, 123, 255, 0)), var(--background-color);
+    border-color: #e0e9f5;
+}
+
+.metric-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.04);
+}
+
+.metric-card h5 {
+    font-size: 1rem;
+    color: var(--secondary-color);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.metric-card .metric-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.chart-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.04);
+}
+
+.chart-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
