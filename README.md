@@ -1,12 +1,3 @@
----
-title: Chest X-Ray Disease Detector
-emoji: 🫁
-colorFrom: blue
-colorTo: indigo
-sdk: docker
-pinned: false
-license: mit
----
 
 # 🫁 Chest X-Ray Disease Detection System
 
