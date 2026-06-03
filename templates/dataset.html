@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+{% block title %}Dataset Information{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="page-header text-center mb-5 dataset-header">
+        <h1>Dataset Overview</h1>
+        <p class="lead">A balanced and diverse dataset is crucial for training a reliable model.</p>
+    </div>
+
+    <!-- Data Distribution Charts Section -->
+    <div class="row g-4 mb-5">
+        <div class="col-lg-6">
+            <div class="card shadow-sm h-100 chart-card">
+                <h4 class="mb-3">Training Data Distribution</h4>
+                <img src="{{ url_for('static', filename='images/training_distribution.png') }}" alt="Training Data Chart">
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="card shadow-sm h-100 chart-card">
+                <h4 class="mb-3">Testing Data Distribution</h4>
+                <img src="{{ url_for('static', filename='images/testing_distribution.png') }}" alt="Testing Data Chart">
+            </div>
+        </div>
+    </div>
+
+    <!-- Data Summary Section -->
+    <div class="card shadow-sm summary-table-card">
+        <h3 class="card-title mb-4">Dataset Details</h3>
+        <p>This project was trained on a custom dataset created by combining several publicly available chest X-ray collections from Kaggle. The data was carefully balanced using augmentation and oversampling techniques to ensure the model does not become biased towards any single class.</p>
+        <p class="mb-4"><strong>Primary Source Example:</strong> <a href="https://www.kaggle.com/datasets/tawsifurrahman/covid19-radiography-database" target="_blank" rel="noopener noreferrer">COVID-19 Radiography Database on Kaggle</a></p>
+        
+        <h4 class="mt-3">Class Summary</h4>
+        <p>The final dataset was organized into four distinct classes for our multi-class classification task. The table below shows the total number of images used in our final dataset after balancing and splitting.</p>
+
+        <div class="table-responsive mt-3">
+            <table class="table table-bordered table-striped text-center">
+                <thead class="table-primary">
+                    <tr>
+                        <th scope="col">Class</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Training Images</th>
+                        <th scope="col">Testing Images</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Pneumonia</strong></td>
+                        <td>X-rays showing signs of viral or bacterial pneumonia.</td>
+                        <td>2,550</td>
+                        <td>900</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tuberculosis</strong></td>
+                        <td>X-rays from patients diagnosed with Tuberculosis.</td>
+                        <td>2,550</td>
+                        <td>900</td>
+                    </tr>
+                     <tr>
+                        <td><strong>Covid-19</strong></td>
+                        <td>X-rays from patients confirmed to have COVID-19.</td>
+                        <td>2,550</td>
+                        <td>900</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Normal</strong></td>
+                        <td>X-rays from healthy individuals with no lung abnormalities.</td>
+                        <td>2,550</td>
+                        <td>900</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

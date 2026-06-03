@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+
+{% block title %}About The Project{% endblock %}
+
+{% block content %}
+
+<!-- New Attractive Header -->
+<div class="about-header mb-5">
+    <h1 class="display-4">About Our Project</h1>
+    <p class="lead col-lg-8 mx-auto">An initiative to harness the power of artificial intelligence to aid in the rapid diagnosis of critical respiratory diseases.</p>
+</div>
+
+<div class="container">
+    <div class="row g-5">
+        <!-- Left Column: Problem & Objectives -->
+        <div class="col-lg-7">
+            <!-- Problem Statement Card -->
+            <div class="card info-card problem-card mb-4">
+                <div class="card-body p-4">
+                    <div class="card-icon"><i class="fas fa-notes-medical"></i></div>
+                    <h3 class="card-title">The Challenge</h3>
+                    <p class="card-text">
+                        Respiratory diseases like COVID-19, Pneumonia, and Tuberculosis are a significant global health threat. Rapid and accurate diagnosis from chest X-rays is critical for timely treatment and controlling outbreaks. However, manual interpretation can be time-consuming and requires expert radiologists, who may not always be available, especially in underserved areas. An automated AI system can act as a powerful tool to assist medical professionals by providing fast, reliable, and data-driven insights.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Project Objectives Card -->
+            <div class="card info-card objectives-card">
+                <div class="card-body p-4">
+                    <div class="card-icon"><i class="fas fa-bullseye"></i></div>
+                    <h3 class="card-title">Our Objectives</h3>
+                    <ul class="list-unstyled">
+                        <li class="d-flex align-items-start mb-2">
+                            <i class="fas fa-check-circle text-success me-2 mt-1"></i>
+                            <span>To develop a deep learning model for multi-class classification of chest X-rays into four categories: COVID-19, Pneumonia, Tuberculosis, or Normal.</span>
+                        </li>
+                        <li class="d-flex align-items-start mb-2">
+                            <i class="fas fa-check-circle text-success me-2 mt-1"></i>
+                            <span>To implement the high-performance Xception architecture using transfer learning for superior accuracy.</span>
+                        </li>
+                        <li class="d-flex align-items-start mb-2">
+                            <i class="fas fa-check-circle text-success me-2 mt-1"></i>
+                            <span>To create a user-friendly web application for easy analysis of X-ray images.</span>
+                        </li>
+                        <li class="d-flex align-items-start">
+                            <i class="fas fa-check-circle text-success me-2 mt-1"></i>
+                            <span>To integrate Grad-CAM to produce visual heatmaps, making the AI's diagnostic focus transparent and understandable to clinicians.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column: Project Workflow Timeline -->
+        <div class="col-lg-5">
+            <div class="card info-card workflow-card h-100">
+                <div class="card-body p-4">
+                    <div class="card-icon"><i class="fas fa-project-diagram"></i></div>
+                    <h3 class="card-title">Project Workflow</h3>
+                    <div class="timeline mt-4">
+                        <div class="timeline-item">
+                            <div class="timeline-icon"><i class="fas fa-database"></i></div>
+                            <h5>1. Data Collection</h5>
+                            <p class="text-muted small">Aggregated and prepared thousands of X-ray images from public datasets.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-icon"><i class="fas fa-cogs"></i></div>
+                            <h5>2. Model Training</h5>
+                            <p class="text-muted small">Trained the Xception model using TensorFlow, leveraging transfer learning.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-icon"><i class="fas fa-vial"></i></div>
+                            <h5>3. Evaluation & Tuning</h5>
+                            <p class="text-muted small">Rigorously tested and fine-tuned the model to maximize accuracy and reliability.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-icon"><i class="fas fa-laptop-code"></i></div>
+                            <h5>4. Web Development</h5>
+                            <p class="text-muted small">Built this responsive web application using Flask to serve the model.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

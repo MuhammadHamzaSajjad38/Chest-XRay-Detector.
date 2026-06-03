@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+
+{% block title %}Model Performance{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="page-header text-center mb-5 results-header">
+        <h1>Model Performance & Results</h1>
+        <p class="lead">A quantitative and qualitative look at the effectiveness of our Xception model.</p>
+    </div>
+
+    <!-- Key Performance Metrics Section -->
+    <div class="row g-4 text-center mb-5">
+        <div class="col-md-3">
+            <div class="metric-card h-100">
+                <h5>Test Accuracy</h5>
+                <p class="metric-value text-success">98.81%</p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="metric-card h-100">
+                <h5>Test Precision</h5>
+                <!-- IMPORTANT: Replace with your actual value -->
+                <p class="metric-value text-primary">98.83%</p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="metric-card h-100">
+                <h5>Test Recall</h5>
+                <!-- IMPORTANT: Replace with your actual value -->
+                <p class="metric-value text-info">98.78%</p>
+            </div>
+        </div>
+        <div class="col-md-3">
+             <div class="metric-card h-100">
+                <h5>Validation Accuracy</h5>
+                <p class="metric-value text-warning">97.78%</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- =================================== -->
+    <!--     VISUAL ANALYSIS (UPDATED)       -->
+    <!-- =================================== -->
+    <h2 class="text-center mb-4">Visual Analysis</h2>
+    <div class="row g-4">
+        
+        <!-- Bar Chart 1: Accuracy Comparison -->
+        <div class="col-md-6">
+            <div class="card chart-card h-100">
+                <h5 class="text-center mb-3">Overall Accuracy Comparison</h5>
+                <img src="{{ url_for('static', filename='images/results/accuracy_comparison.png') }}" class="img-fluid" alt="Model Accuracy Comparison Bar Chart">
+            </div>
+        </div>
+
+        <!-- Bar Chart 2: Detailed Test Performance (NEW) -->
+        <div class="col-md-6">
+            <div class="card chart-card h-100">
+                <h5 class="text-center mb-3">Detailed Test Performance</h5>
+                <img src="{{ url_for('static', filename='images/results/test_performance.png') }}" class="img-fluid" alt="Detailed Test Performance Bar Chart">
+            </div>
+        </div>
+
+        <!-- Accuracy and Loss Line Charts (remain side-by-side) -->
+        <div class="col-md-6">
+             <div class="card chart-card">
+                <h5 class="text-center mb-3">Training & Validation Accuracy Over Time</h5>
+                <img src="{{ url_for('static', filename='images/results/accuracy_plot.png') }}" class="img-fluid" alt="Model Accuracy Line Chart">
+            </div>
+        </div>
+        <div class="col-md-6">
+             <div class="card chart-card">
+                <h5 class="text-center mb-3">Training & Validation Loss Over Time</h5>
+                <img src="{{ url_for('static', filename='images/results/loss_plot.png') }}" class="img-fluid" alt="Model Loss Line Chart">
+            </div>
+        </div>
+        
+        <!-- Confusion Matrix (takes up more width for clarity) -->
+        <div class="col-lg-8 mx-auto">
+            <div class="card chart-card">
+                <h5 class="text-center mb-3">Confusion Matrix</h5>
+                <p class="text-center text-muted small">This matrix shows the model's performance for each class. The diagonal values represent correct predictions.</p>
+                <img src="{{ url_for('static', filename='images/results/confusion_matrix.png') }}" class="img-fluid" alt="Confusion Matrix">
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Model Information{% endblock %}
+{% block content %}
+<h2 class="mb-4">Model Architecture & Training Info</h2>
+<p><strong>Model:</strong> Xception</p>
+<p><strong>Input Size:</strong> 299 x 299 x 3</p>
+<p><strong>Dataset:</strong> Chest X-ray Images (COVID-19, Pneumonia, TB, Normal)</p>
+<ul>
+    <li><strong>Training Accuracy:</strong> 95.6%</li>
+    <li><strong>Validation Accuracy:</strong> 93.2%</li>
+    <li><strong>Loss Function:</strong> Categorical Crossentropy</li>
+    <li><strong>Optimizer:</strong> Adam</li>
+</ul>
+<p>This model was trained using TensorFlow/Keras and validated using real-world data.</p>
+{% endblock %}

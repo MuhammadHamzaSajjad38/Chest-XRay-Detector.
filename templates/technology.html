@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+
+{% block title %}How It Works{% endblock %}
+
+{% block content %}
+
+<!-- New Attractive Header -->
+<div class="tech-header mb-5">
+    <h1 class="display-4">The Technology Behind Our AI</h1>
+    <p class="lead col-lg-8 mx-auto">From custom architecture to explainable results, here's a look under the hood.</p>
+</div>
+
+<div class="container">
+    <!-- Architecture Diagram Section - FRONT AND CENTER -->
+    <div class="row mb-5">
+        <div class="col-12">
+            <div class="architecture-container">
+                <h2 class="text-center mb-4">Our Project Process FLow Diagram</h2>
+                <p class="text-center text-muted">This diagram shows the complete flow of data, from input MRI to final classification. It utilizes advanced concepts like separable convolutions and residual connections for high efficiency and accuracy.</p>
+                <hr>
+                <img src="{{ url_for('static', filename='images/process2.jpg') }}" class="img-fluid" alt="Model Architecture Diagram">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Feature Section 1: The Xception-inspired Model -->
+<div class="feature-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6 slide-in-from-left">
+                <!-- Find a good image representing neural networks or data flow -->
+                <img src="https://miro.medium.com/v2/resize:fit:1400/1*uAeANQIOQPqWZnnuH-VEyw.jpeg" class="img-fluid feature-image" alt="Neural Network Concept">
+            </div>
+            <div class="col-md-6 feature-text slide-in-from-right">
+                <h3><i class="fas fa-cogs me-2"></i>Custom CNN Architecture</h3>
+                <p class="lead">Our model is a custom-designed Convolutional Neural Network (CNN) heavily inspired by the powerful <strong>Xception architecture</strong>.</p>
+                <p>Instead of using a generic pre-trained model, our network is tailored specifically for the nuances of Brain MRI scans. The core components are **Depthwise Separable Convolutions**, which are highly efficient at learning features from images. This allows the model to be both powerful and less prone to overfitting—a critical advantage when working with medical data.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Feature Section 2: Grad-CAM for Explainability -->
+<div class="feature-section bg-light">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- Note the order is swapped for alternating layout -->
+            <div class="col-md-6 feature-text slide-in-from-left">
+                <h3><i class="fas fa-eye me-2"></i>Explainable AI (XAI) with Grad-CAM</h3>
+                <p class="lead">We believe AI should not be a "black box." That's why we integrated <strong>Grad-CAM (Gradient-weighted Class Activation Mapping)</strong>.</p>
+                <p>This technique produces a visual heatmap that overlays the original X-ray, highlighting the exact regions the model found most important for its diagnosis. This provides invaluable transparency, allowing medical professionals to verify that the model is "looking" at the correct pathological areas, thereby building trust and confidence in its predictions.</p>
+            </div>
+            <div class="col-md-6 slide-in-from-right">
+                <!-- Use a sample Grad-CAM image here -->
+                <img src="{{ url_for('static', filename='images/grad_cam_example.png') }}" class="img-fluid feature-image" alt="Grad-CAM Heatmap Example">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Feature Section 3: The Tech Stack -->
+<div class="feature-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6 slide-in-from-left">
+                <!-- Find a collage of logos: Python, TF, Keras, Flask -->
+                <img src="{{ url_for('static', filename='images/technology.png')}}" class="img-fluid feature-image" alt="Technology Stack Logos">
+            </div>
+            <div class="col-md-6 feature-text slide-in-from-right">
+                <h3><i class="fas fa-laptop-code me-2"></i>Powered by a Modern Stack</h3>
+                <p class="lead">This project is built on a foundation of powerful and industry-standard open-source technologies.</p>
+                <ul>
+                    <li><strong>Python:</strong> The core programming language for the entire project.</li>
+                    <li><strong>TensorFlow & Keras:</strong> Used for building, training, and evaluating our deep learning model.</li>
+                    <li><strong>Flask:</strong> A lightweight and powerful Python web framework used to create the web server and handle user requests.</li>
+                    <li><strong>Bootstrap:</strong> A popular front-end framework for creating a responsive and modern user interface.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
